@@ -1,9 +1,0 @@
-﻿1.linux系统需要安装usb文件系统
-2.安装 libudev-dev 
-sudo apt update
-sudo apt-get install libudev-dev
-3.运行步骤：
-sudo make install;  // 安装libCanCmd.so库（新系统执行一次）
-sudo make ;
-sudo ./testLikeCan;
-
