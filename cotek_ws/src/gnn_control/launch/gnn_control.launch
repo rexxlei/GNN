@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="gnn_control" type="gnn_control_node" name="gnn_control_node" output="screen">
+        </node>
+
+    <node pkg="gnn_control" type="data_logger_node" name="data_logger_node" output="screen">
+    </node>
+</launch>

@@ -1,0 +1,24 @@
+<launch>
+    <group ns = "$(env ROS_HOSTNAME)">
+        <!-- ===============================
+            cotek 一键启动桥接 + 底盘节点 + 键盘控制
+            =============================== -->
+        <!-- 1 .启动 cotek_can_bridge 程序 -->
+        <node name="cotek_can_bridge" pkg="tracer_base" type="cotek_can_bridge" output="screen">
+            <param name="bridge_rate" value="100" />
+        </node>
+
+        <!-- 2 .启动 tracer_base_node（使用 vcan0） -->
+        <node name="tracer_base_node" pkg="tracer_base" type="tracer_base_node" output="screen">
+            <param name="port_name" type="string" value="vcan0" />
+            <param name="simulated_robot" type="bool" value="false" />
+            <param name="odom_frame" type="string" value="$(env ROS_HOSTNAME)_odom" />
+            <param name="base_frame" type="string" value="$(env ROS_HOSTNAME)_base_link" />
+        </node>
+
+        <!-- 3 . （可选）启动键盘控制节点 -->
+        <!-- <node name="teleop_keybord" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen">
+            <param name="repeat_rate" value="50.0" />
+        </node> -->
+    </group>
+</launch>

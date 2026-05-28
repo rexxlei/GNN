@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- <param name="use_sim_time" value="true"/> -->
+	<!-- set logs -->
+	<!-- <env name="ROSCONSOLE_CONFIG_FILE" value="$(find cotek_common)/config/cotek_rosconsole.conf"/> -->
+	<!-- Tracer_base Node -->
+	<include file="$(find tracer_bringup)/launch/tracer_bridge.launch" />
+	<!-- Twr_serial Node -->
+	<!-- <include file="$(find twr_serial)/launch/twr_serial.launch" /> -->
+	<!-- Bluesea2 Node -->
+	<!-- <include file="$(find bluesea2)/launch/LDS-E300-E.launch" /> -->
+	<!-- Laser_filter Node -->
+	<!-- <include file="$(find laser_filter)/launch/laser_filter.launch" /> -->
+	
+	<!-- Static TF: base_link -> laser (x y z yaw pitch roll frame_id child_frame_id period_in_ms) -->
+	<!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0 0 0.2 0 0 0 base_link laser 100" /> -->
+	
+	<!-- laser_mapping Node -->
+	<!-- <include file="$(find laser_mapping)/launch/laser_display.launch" /> -->
+	<!-- Slam Node -->
+	<!-- <arg name="use_raw_laser" default="false" />
+	<include file="$(find laser_mapping)/launch/gmapping.launch">
+		<arg name="scan_topic" value="/naviLaser1" if="$(arg use_raw_laser)"/>
+		<arg name="scan_topic" value="/naviLaser1_filtered" unless="$(arg use_raw_laser)"/>
+	</include> -->
+	<!-- Rosbag Node -->
+	<!-- <include file="/home/cotek/config/launch/cotek_rosbag.launch" /> -->
+	<!-- Runner Nodes -->
+	<!-- <include file="$(find cotek_runner)/launch/cotek_runner.launch" /> -->
+	<!-- Communicate Node -->
+	<!-- <include file="$(find cotek_communicate)/launch/cotek_communicate.launch" /> -->
+	<!-- 3DSLAM Node -->	
+	<!-- <include file="/home/cotek/config/launch/sensor/mid360.launch" /> -->
+	<!-- <include file="$(find cotek_3d_slam)/launch/cotek_3d_slam.launch" /> -->
+	<!-- Navigation Node -->
+	<!-- <include file="$(find cotek_navigation)/launch/cotek_navigation.launch" /> -->
+	<!-- Decision maker Node -->
+	<!-- <include file="$(find decision_maker)/launch/decision_maker.launch" /> -->
+	<!-- Action Node -->
+	<!-- <include file="$(find cotek_action)/launch/cotek_action.launch" /> -->
+	<!-- Avoid Node -->
+	<!-- <include file="$(find cotek_avoid)/launch/cotek_avoid.launch" /> -->
+	<!-- Diagnostic Node -->
+	<!-- <include file="$(find cotek_diagnostic)/launch/cotek_diagnostic.launch" /> -->
+	<!-- Calibration Node -->
+	<!-- <include file="$(find cotek_calibration)/launch/cotek_calibration.launch" /> -->
+	<!-- Visual Node -->
+	<!-- <include file="$(find cotek_visual)/launch/cotek_visual.launch" /> -->
+	<!-- Storage Node -->
+	<!-- <include file="$(find cotek_storage)/launch/cotek_storage.launch" /> -->
+	<!-- Localizer Nodes -->
+	<!-- <include file="$(find cotek_localizer)/launch/cotek_localizer.launch" /> -->
+	<!-- Slam nodes -->
+	<!-- <include file="$(find cotek_common)/launch/slam/cotek_fork_localizer.launch" /> -->
+	<!-- 3D-Slam nodes -->
+	<!-- <include file="$(find direct_lidar_inertial_odometry)/launch/dlio.launch" /> -->
+</launch>

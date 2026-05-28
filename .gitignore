@@ -1,0 +1,25 @@
+# ROS
+build/
+devel/
+install/
+log/
+.catkin_workspace
+.catkin_tools
+
+# Python
+*.py[cod]
+__pycache__/
+
+# C++
+*.o
+*.so
+*.a
+
+# VS Code
+.vscode/
+
+# Core dumps
+core
+
+# Hidden files
+.DS_Store
